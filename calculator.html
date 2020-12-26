@@ -1,0 +1,250 @@
+<html>
+<head>
+	
+	
+	<title>Calculator</title>
+	<style>
+		body{
+			background-color: rgb(78,75,75);
+		}
+	
+		table{
+			position: absolute;
+			top:150px;;
+			left:30%;
+			width: 400px;
+			height: 400px;
+			background-color: darkgrey;
+			border:3px solid;
+		}
+		tr {
+			padding:-30px;
+		}
+	
+		tr td input{
+			width: 70px;
+			height: 40px;
+			margin-left: 5px;
+			padding: -30px;
+		}
+	
+		#bf{
+			width: 140px;
+			height: 40px;
+			background-color: darkred;
+			color:white;
+		}
+		#b{
+			margin-left: -100px;
+		}
+	
+		#in{
+			width: 310px;
+			margin-left: 45px;
+			
+		}
+		
+		
+		
+		
+		#in1{
+			position: relative;
+			left:40px;
+			
+		}
+		#in2{
+			position: relative;
+			left:20px;
+		}
+		.in1{
+			background-color: rgb(114 , 79 , 109);
+		}
+		
+		
+		.f{
+			background-color: #20b2aa;
+		}
+		
+		
+		
+		
+		
+	</style>
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	</head>
+
+<body>
+	
+	<table>
+		
+		
+		<tr>
+		<td colspan="8">  <input id="in">    </td>
+		
+		</tr>
+		
+		
+		
+	<tr>
+		<td><input class="in1" id="in1" type="button" value="c" onclick="clean();" >        </td>
+		
+		<td><input class="in1" id="in2" type="button" value="&#8756;"  >     </td>
+		
+		<td><input class="in1" type="button" value="Del" onclick="back();"  >      </td>
+		
+		<td><input class="f" id="b" type="button" value="&#247;" onclick="insert2();"  >      </td>
+		</tr>
+
+		<tr>
+		<td><input id="in1" type="button" value="7" onclick="insert(7);" >        </td>
+		
+		<td><input id="in2" type="button" value="8" onclick="insert(8);"  >     </td>
+		
+		<td><input type="button" value="9" onclick="insert(9);"  >      </td>
+			
+			<td><input class="f" id="b" type="button" value="&#215;" onclick="insert3();"  >      </td>
+		</tr>
+		
+		
+		<tr>
+		<td><input id="in1" type="button" value="4" onclick="insert(4);" >        </td>
+		
+		<td><input id="in2" type="button" value="5" onclick="insert(5);"  >     </td>
+		
+		<td><input type="button" value="6" onclick="insert(6);"  >      </td>
+			
+			<td><input class="f" id="b" type="button" value="&#8722;" onclick="insert4();"  >      </td>
+		</tr>
+		
+		
+		<tr>
+		<td><input id="in1" type="button" value="1" onclick="insert(1);" >        </td>
+		
+		<td><input id="in2" type="button" value="2" onclick="insert(2);"  >     </td>
+		
+		<td><input type="button" value="3" onclick="insert(3);"  >      </td>
+			
+			<td><input class="f" id="b" type="button" value="&#43;" onclick="insert5();"  >      </td>
+		</tr>
+		
+		
+		
+		<tr>
+		<td><input id="in1" type="button" value="." onclick="insert90();" >         </td>
+		
+		<td><input id="in2" type="button" value="0" onclick="insert(0);"  >     </td>
+		
+		<td><input id="bf" type="button" value="&#61;" onclick="equal();"  >      </td>
+			
+			
+		</tr>
+		
+	
+	
+	
+	
+	</table>
+	
+	
+	
+	
+	
+	<script>
+	
+
+		function insert(num){
+		var mystr =	window.in.value;
+			
+			
+			window.in.value=mystr + num;
+			
+			
+			
+		}
+		
+		
+		function insert2() {
+			var mystr =	window.in.value;
+			window.in.value= mystr + "/";
+		}
+		
+		function insert3() {
+			var mystr =	window.in.value;
+			window.in.value= mystr + "*";
+		}
+		
+		function insert4() {
+			var mystr =	window.in.value;
+			window.in.value= mystr + "-";
+		}
+		
+		function insert5() {
+			var mystr =	window.in.value;
+			window.in.value= mystr + "+";
+		}
+		
+		function insert90() {
+			var mystr = window.in.value;
+			
+			window.in.value = mystr + ".";
+		}
+		
+		
+		
+		function clean () {
+			
+			window.in.value="";
+		}
+	
+	function back() {
+		
+		var exp = window.in.value;
+		
+		window.in.value= exp.substring(0,exp.length - 1);
+	}
+	
+		function equal() {
+			
+			var sum= window.in.value;
+			 
+			if (sum) {
+				
+				window.in.value= eval(sum);
+			}
+		}
+	
+	</script>
+	
+	
+	
+	</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
